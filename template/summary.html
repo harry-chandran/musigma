@@ -1,0 +1,115 @@
+<div id="summaryContent">		
+		<!---Section content Starts-->
+		
+	<div id="secContainer">
+		<!---Current week throw Outer Section Starts-->
+		<div class="outerSec">
+			<div class="panelWTD" style="height:60px;">
+			<div class="panelHeader"> Throw % WTD
+			</div>
+			<div class="panelCont">
+			   <span class="totalTxt">Total
+			   </span>
+			   <span id="throwPercent">8%
+			   </span>
+			</div>	
+			</div>
+			<div class="container-fluid">
+				<div class="chartCont">
+					<div class="chartHead">					
+						<span> This Week</span>						
+					</div>
+					<div class="containerChart">
+						<div class="titleDiv"> Sales</div>
+						<div class="titleDiv" style="border-right:none;"> Throws</div>
+						<div class="chartContent" style="border-right:1px solid #D2D1C9">
+								<div style="height:200px;">
+							<div chart-data="salesData" id="chart1"></div>
+								</div>
+						</div>
+						<div class="chartContent">
+								<div style="height:200px">
+								<div chart-data="salesData" id="chart2"></div>
+								</div>
+						</div>
+						</div>
+				</div>		
+			</div>
+		</div>	
+	<!---Current week throw Outer Section Ends--> 
+	<!---Lastweek throw Outer Section Starts-->
+		<div class="outerSec">
+			<div class="panelWTD" style="height:60px;">
+				<div class="panelHeader"> Throw % Last Week
+				</div>
+				<div class="panelCont">
+				   <span class="totalTxt">Total
+				   </span>
+				   <span id="throwPercent">8%
+				   </span>
+				</div>	
+			</div>
+			<div class="container-fluid">
+				<div class="chartCont">
+					<div class="chartHead">					
+					<span> Last Week</span>						
+					</div>
+					<div class="containerChart">
+						<div class="titleDiv"> Sales</div>
+						<div class="titleDiv" style="border-right:none;"> Throws</div>
+						<div class="chartContent" style="border-right:1px solid #D2D1C9">
+								<div style="height:200px;">
+								<div chart-data="salesData" id="chart3"></div>
+								</div>
+						</div>
+						<div class="chartContent">
+								<div style="height:200px">
+								<div chart-data="salesData" id="chart4"></div>
+								</div>
+						</div>
+						</div>
+				</div>		
+			</div>
+		</div>	
+	<!---Lastweek throw Outer Section Ends--> 
+	<!---Yearly throw  Outer Section Starts-->
+		<div class="outerSec">
+			<div class="panelWTD" style="height:60px;">
+				<div class="panelHeader"> Yearly Sales and Throws % WTD
+				</div>
+				<div class="panelCont">
+				   <span class="totalTxt">Total
+				   </span>
+				   <span id="throwPercent">8%
+				   </span>
+				</div>	
+			</div>
+			<div class="container-fluid">
+				<div class="chartCont">
+					<div class="chartHead">					
+						<span> This Week</span>						
+					</div>
+					<div class="containerChart">
+						<div class="titleDiv"> Sales</div>
+						<div class="titleDiv" style="border-right:none;"> Throws</div>
+						<div class="chartContent" style="border-right:1px solid #D2D1C9">
+								<div style="height:200px;">
+								<div chart-data="salesData" id="chart5"></div>
+								</div>
+						</div>
+						<div class="chartContent">
+								<div style="height:200px">
+								<div chart-data="salesData" id="chart6"></div>
+								</div>
+						</div>
+						</div>
+				</div>		
+			</div>
+		</div>	
+	<!--Yearly throw Outer Section Ends--> 
+	</div>
+</div>
+
+  <script src="js/lib/d3.v3.min.js" charset="utf-8"></script>
+
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>

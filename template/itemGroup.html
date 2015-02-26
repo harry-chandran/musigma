@@ -1,0 +1,36 @@
+<div class="positionWrap" style="margin:0 auto;">
+<!-- <div class="dropMain" style="width:980px;margin:0 auto">
+    <div id="dropControls" style="width:auto;font-size:11px;">
+         <span>Market</span>  
+     <select data-ng-model="market" data-ng-options="c.Market as c.Market for c in markets.Markets" data-ng-change="GetStores()">
+              <option value="">-- Select Market --</option>
+                </select>
+ 
+               <span>Store</span>
+                <select data-ng-model="store" data-ng-disabled="!stores" data-ng-options="s.Store as s.Store for s in stores.Stores" data-ng-change="GetWeeks()">
+                    <option value="">-- Select Store --</option>
+                </select>
+        <span>Weeks</span>
+                <select data-ng-model="week" data-ng-disabled="!weeks" data-ng-options="s.Week as s.Week for s in weeks.Weeks">
+                    <option value="">-- Select Week --</option>
+                </select>
+      </div>
+    <button class="viewButton" id="scoreView" ng-click="loadrecord()" value="Load Data" style="color:#fff;margin-left:10px">View Scorecard</button>
+    </div>
+</div> -->
+	 
+	<!---dropdown controls ends here-->
+	
+	<!---Section content Starts-->
+	
+	<div id="secContainer" >
+	<!---Current week throw Outer Section Starts--->
+<div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+
+	
+    <ng-jqgrid config="config" addnew="true" modeldata="patientdata" gridid="patientgrid" pagerid="patientpager" api="gridapi" style="width:800px"></ng-jqgrid>
+       
+  </div>
