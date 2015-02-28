@@ -1,8 +1,8 @@
 
 /*Populting Dropdown*/
-
-myApp.controller('summaryController', function ($rootScope,$scope, $http) {
+myApp.controller('summaryController', function ($rootScope,$scope,$http,$location) {
 	
+$scope.$parent.categoryUrl = $location.path();
 
 $scope.$parent.$watch('salesData', function(value){
         if(value == undefined){

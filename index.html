@@ -10,6 +10,7 @@
  <link rel="stylesheet" href="css/ui.jqgrid.css" />
  <link rel="stylesheet" href="css/ace.min.css" />
 	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
+	<!--   <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="css/fpp.css" rel="stylesheet">			
 	 	<style>
 	.axis path,
@@ -86,67 +87,65 @@
 						<img class="walmart_logo" alt="Walmart Logo" src="./img/logo_walmart.png" width="170" height="44">
 					</a>
 				</div>	
-			 	<h2 class="headerTxt">FRESH PRODUCTION AND PLANNING - BAKERY</h2>
+			 	<h2 class="headerTxt">{{pageHeading}}</h2>
 			</div>
 		</header>
-		<!---Select options starts-->
-		<div class="headMenu">
-			<ul class="headMenuOpt">
-				<!-- <li class="active"><a href="#home">Home</a></li>
-				<li><a href="#summary">FPP Backery Scorecard</a></li>
-				<li ><a href="#itemGroup">FPP Bakery Production Item Group</a></li> -->
+	</div>
+	<!---header and Logo Ends-->
 
-				<li><a href='#home' class='navHover' ng-class="{ active: activePath=='/home'}" >Home</a></li>
-				<li><a href='#summary' class="navHover" ng-class="{ active: activePath=='/summary'}" >FPP Backery Scorecard</a></li>
-				<li><a href='#itemGroup' class="navHover" ng-class="{ active: activePath=='/itemGroup'}" >FPP Bakery Production Item Group</a></li>
+	<!---Select options starts-->
+	<div >
+		<div class="headMenu" style="margin-top:60px;">
+			<ul class="headMenuOpt">
+				<li><a href='#/{{category}}/home' class='navHover' ng-class="{ active: activePath=='/{{category}}/home'}" >Home</a></li>
+				<li><a href='#/{{category}}/summary' class="navHover" ng-class="{ active: activePath=='/{{category}}/summary'}" >FPP Backery Scorecard</a></li>
+				<li><a href='#/{{category}}/itemGroup' class="navHover" ng-class="{ active: activePath=='/{{category}}/itemGroup'}" >FPP Bakery Production Item Group</a></li>
 			</ul>
 		</div>
 		<div class="or-spacer">
 			<div class="mask"></div>
 		</div>
-	<!---header and Logo Ends-->
-	</div>
 
 	
-	<div class="positionWrap" style="margin:0 auto;margin-top:150px;">
-		<div class="dropMain" style="width:980px;margin:0 auto">
-		    <div id="dropControls" style="width:auto;font-size:11px;">
-	        <span>Market</span>	
-			 <select data-ng-model="market" data-ng-options="c.Market as c.Market for c in markets.Markets" data-ng-change="GetStores()">
-	              <option value="">-- Select Market --</option>
-	                </select>
-	 
-	               <span>Store</span>
-	                <select data-ng-model="store" data-ng-disabled="!stores" data-ng-options="s.Store as s.Store for s in stores.Stores" data-ng-change="GetWeeks()">
-	                    <option value="">-- Select Store --</option>
-	                </select>
-					<span>Weeks</span>
-	                <select data-ng-model="week" data-ng-disabled="!weeks" data-ng-options="s.Week as s.Week for s in weeks.Weeks">
-	                    <option value="">-- Select Week --</option>
-	                </select>
-	    	</div>
-			<button class="viewButton" id="scoreView" ng-click="loadrecord()"  value="Load Data" style="color:#fff;margin-left:10px">View Scorecard</button>
+
+		<div class="positionWrap" style="margin:0 auto;">
+			<div class="dropMain" style="width:980px;margin:0 auto">
+			    <div id="dropControls" style="width:auto;font-size:11px;">
+		        <span>Market</span>	
+				 <select data-ng-model="market" data-ng-options="c.Market as c.Market for c in markets.Markets" data-ng-change="GetStores()">
+		              <option value="">-- Select Market --</option>
+		                </select>
+		 
+		               <span>Store</span>
+		                <select data-ng-model="store" data-ng-disabled="!stores" data-ng-options="s.Store as s.Store for s in stores.Stores" data-ng-change="GetWeeks()">
+		                    <option value="">-- Select Store --</option>
+		                </select>
+						<span>Weeks</span>
+		                <select data-ng-model="week" data-ng-disabled="!weeks" data-ng-options="s.Week as s.Week for s in weeks.Weeks">
+		                    <option value="">-- Select Week --</option>
+		                </select>
+		    	</div>
+				<button class="viewButton" id="scoreView" ng-click="loadrecord()"  value="Load Data" style="color:#fff;margin-left:10px">View Scorecard</button>
+			</div>
 		</div>
+
+		<!----Main Dyanmic Content starts -->
+
+			<div ng-view></div>
+
+		<!----Main Dyanmic Content Ends -->
 	</div>
 
-
-
-
-
-	<!----Main Content starts -->
-		<div ng-view></div>
-	<!----Main Content Ends -->
 </div>
 
-<!---body End --->
+<!--body End -->
 
- <!---<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/redmond/jquery-ui.css"> -->
- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+ <link rel="stylesheet" href="css/font-awesome.css" />
  <script src="js/lib/jquery-1.11.1.min.js"></script>
   <script src="js/lib/jquery.jqGrid.min.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>	
+  <script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-route.js"></script>	
 
 	
 
@@ -166,9 +165,10 @@
 
   <script src="js/lib/d3.v3.min.js" charset="utf-8"></script>
 
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
 
    
 
 </body>
+
 </html>

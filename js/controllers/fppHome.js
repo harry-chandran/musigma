@@ -1,19 +1,21 @@
 	// create the controller and inject Angular's $scope
-myApp.controller('homeCtrl', function($rootScope,$scope,$http) {
+myApp.controller('homeCtrl', function($rootScope,$scope,$http,$location) {
 
     $scope.patientdata = [];
     $scope.gridapi = {};
     // $scope.loadrecord();
+    //$scope.category = $routeParams.category;
+    $scope.$parent.categoryUrl = $location.path();
+
+  // console.log($location.path());
 
  $scope.$parent.$watch('modeldata', function(value){
-
         if(value == undefined){
             console.log("no data");
         }else{
             setTimeout(function(){ $scope.gridapi.insert(eval(value.jqdata)); }, 100);
               
         }
-      
 });
 
 

@@ -1,8 +1,9 @@
 	// create the controller and inject Angular's $scope
-myApp.controller('itemGrpController', function($rootScope,$scope,$http) {
+myApp.controller('itemGrpController', function($rootScope,$scope,$http,$location) {
 
     $scope.patientdata = [];
     $scope.gridapi = {};
+    $scope.$parent.categoryUrl = $location.path();
 
      $scope.$parent.$watch('modeldata', function(value){
         if(value == undefined){

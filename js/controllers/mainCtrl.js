@@ -1,7 +1,27 @@
 myApp.controller('mainCtrl', function ($scope,$location, $route,$http) {	  
 	 $scope.activePath = null;
-	  
+
+      $scope.categoryUrl = null;
+	  $scope.category = null;
+
+      $scope.pageHeading = "FRESH PRODUCTION AND PLANNING - BAKERY";
+
+
+      $scope.$watch('categoryUrl', function(value){
+            if(value == '/beakery/home'){
+                $scope.category = 'beakery';
+                $scope.pageHeading = "FRESH PRODUCTION AND PLANNING - BAKERY";
+            }else if(value == '/daily/home'){
+                 $scope.category = 'daily';
+                 $scope.pageHeading = "FRESH PRODUCTION AND PLANNING - DAILY";                  
+            }
+          
+    });
+   
+
+
 	  $scope.$on('$routeChangeSuccess', function(){
+         console.log($scope.category);
 	    $scope.activePath = $location.path();
 	  });
 
@@ -91,7 +111,13 @@ myApp.controller('mainCtrl', function ($scope,$location, $route,$http) {
 
 
 	$scope.loadrecord=function(){
-		console.log("hi i am calling always")
+		console.log("hi i am calling always");
+        if($scope.category == 'beakery'){
+            console.log("beakery product");
+        }else if($scope.category == 'daily'){
+            console.log("daily product");               
+        }
+
    	 $scope.modeldata ={
         "jqdata" :
         [
